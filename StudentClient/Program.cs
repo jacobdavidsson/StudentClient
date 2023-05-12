@@ -15,7 +15,6 @@ class Program
 
         while (!exit)
         {
-            Console.WriteLine();
             Console.WriteLine("What would you like to do? Get/Post/Delete/Put/Exit:");
             string input = Console.ReadLine().ToLower();
 
@@ -68,6 +67,7 @@ class Program
         {
             Console.WriteLine("An error occurred: " + e.Message);
         }
+        Console.WriteLine();
     }
 
     static async Task Post()
@@ -92,12 +92,12 @@ class Program
             Console.WriteLine();
             Console.WriteLine("New student created:");
             Console.WriteLine($"ID: {createdStudent.Id}, Name: {createdStudent.Name}, Enrollment Date: {createdStudent.EnrollmentDate}");
-            Console.WriteLine();
         }
         catch (Exception e)
         {
             Console.WriteLine("An error occurred: " + e.Message);
         }
+        Console.WriteLine();
     }
 
     static async Task Delete() 
@@ -118,6 +118,7 @@ class Program
         {
             Console.WriteLine("An error occured: " + e.Message);
         }
+        Console.WriteLine();
     }
 
     static async Task Put() 
@@ -134,7 +135,6 @@ class Program
             Console.WriteLine();
             Console.WriteLine("Enter the new name of the student:");
             string newName = Console.ReadLine();
-            Console.WriteLine();
 
             Student updatedStudent = new Student { Id = studentId, Name = newName, EnrollmentDate = DateTime.Now };
 
@@ -145,5 +145,6 @@ class Program
         {
             Console.WriteLine("An error occured: " + e.Message);
         }
+        Console.WriteLine();
     }
 }
